@@ -1,0 +1,138 @@
+* {
+    font-family: monospace;
+    margin: 0;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+header, main, footer {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-top: 1em;
+}
+
+footer p {
+    text-align: right;
+    margin: 2rem 0 1rem;
+}
+
+.card {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 1em;
+    cursor: pointer;
+    border: .1rem solid lightgray;
+    border-radius: .5rem;
+    background-color: white;
+}
+
+.card:last-child {
+    margin-bottom: 1em;
+}
+
+input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 2em);
+    padding: .5em 1em;
+    cursor: pointer;
+    transition: color .35s ease-in;
+    color: mediumblue;
+}
+
+label > span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cardIcon {
+    font-size: 1.5em;
+    content: "+";
+    transition: transform .7s ease-in, opacity .35s ease-in;
+    opacity: 0;
+}
+
+img {
+    width: 0;
+    max-width: 30rem;
+    transition: width .7s ease-in;
+}
+
+
+/*effects*/
+@media (hover: hover) {
+    main:hover label {
+        color: black;
+    }
+
+    main:hover .cardIcon {
+        opacity: 1;
+    }
+
+    .card:hover img {
+        width: 100%;
+    }
+}
+
+.card:hover .cardIcon {
+    transform: rotate(-45deg);
+}
+
+input:checked + label {
+    color: black;
+}
+
+input:checked ~ label .cardIcon {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label img {
+    width: 100%;
+}
+
+input:active ~ label {
+    opacity: .7;
+    color: mediumblue;
+}
+
+
+/*media query*/
+@media screen and (max-width: 1920px){
+    html {
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width: 820px){
+    html {
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 320px){
+    html {
+        font-size: .7em;
+    }
+}
