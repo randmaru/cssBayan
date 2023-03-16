@@ -82,16 +82,18 @@ img {
 
 
 /*effects*/
-main:hover label {
-    color: black;
-}
+@media (hover: hover) {
+    main:hover label {
+        color: black;
+    }
 
-main:hover .cardIcon {
-    opacity: 1;
-}
+    main:hover .cardIcon {
+        opacity: 1;
+    }
 
-.card:hover img {
-    width: 100%;
+    .card:hover img {
+        width: 100%;
+    }
 }
 
 .card:hover .cardIcon {
